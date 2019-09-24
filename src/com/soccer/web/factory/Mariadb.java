@@ -17,5 +17,6 @@ public class Mariadb implements Database{
 			e.printStackTrace();
 		}
 		return conn;
+		
 	}
 }
