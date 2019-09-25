@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.soccer.web.enums.DBDriver;
+import com.soccer.web.enums.DBUrl;
 import com.soccer.web.pool.Constants;
 
 
@@ -16,8 +19,8 @@ public class ConnTest {
 		ResultSet rs = null;
 	
 		try {
-			Class.forName(Constants.ORACLE_DRIVER);
-			conn = DriverManager.getConnection(Constants.ORACLE_URL,Constants.USERNAME,Constants.PASSWORD);
+			Class.forName(DBDriver.ORACLE_DRIVER.toString());
+			conn = DriverManager.getConnection(DBUrl.ORACLE_URL.toString(),Constants.USERNAME,Constants.PASSWORD);
 			if(conn !=null) {
 				System.out.println("연결성공");
 				stmt = conn.createStatement();
