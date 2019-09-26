@@ -15,8 +15,8 @@
 		<tr>
 			<td style="width:300px">
 			ID : <input type="text" name="playerId"/><br/>
-			<input type="hidden" name ="action"value="move" />
-			<input type="hidden" name = "page" value="home" />
+			<input type="hidden" name ="action"value="login" style="width:100%;height: 100%"/>
+			<input type="hidden" name = "page" value="home" style="width:100%;height: 100%"/>
 			
 			</td>
 			<td rowspan="2" > 

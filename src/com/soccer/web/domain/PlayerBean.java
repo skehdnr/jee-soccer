@@ -12,7 +12,7 @@ public class PlayerBean  implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String playername,playerId,teamId,ePlayerName,nickname,joinYYYY
-				,position,backNo,nation,birthDate,solar,height,weghit;
+				,position,backNo,nation,birthDate,solar,height,weight;
 
 	public void setAttribute(String string, PlayerBean player) {
 		// TODO Auto-generated method stub

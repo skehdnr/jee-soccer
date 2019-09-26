@@ -2,16 +2,13 @@ package com.soccer.web.serviceimpl;
 
 import java.util.List;
 
-import com.soccer.web.dao.PlayerDao;
 import com.soccer.web.daoimpl.PlayerDaoImpl;
 import com.soccer.web.domain.PlayerBean;
 import com.soccer.web.service.PlayerService;
 
-import sun.security.jca.GetInstance;
 
 public class PlayerServiceImpl implements PlayerService {
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
-
 	@Override
 	public List<String> findPositions() {
 		return PlayerDaoImpl.getInstance().selectPositions();
@@ -19,20 +16,23 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public List<PlayerBean> findByTeamIdPosition(PlayerBean param) {
-		// TODO Auto-generated method stub
-		return null;
+		return PlayerDaoImpl.getInstance().selectByTeamIdPosition(param);
 	}
 
 	@Override
 	public List<PlayerBean> findByTeamIdHeightName(PlayerBean param) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public static PlayerServiceImpl getInstance() {
 		return instance;
 	}
-	private PlayerServiceImpl () {
-		
+	@Override
+	public PlayerBean login(PlayerBean param) {
+		System.out.println("★★★ 6. PlayerServiceImpl 의 login() 으로 이동 ★★★ ");
+		System.out.println(String.format("param 값 출력 : %s, %s ",
+				param.getPlayerId(), 
+				param.getSolar()));
+		return PlayerDaoImpl.getInstance().selectByPlayerIdSolar(param);
 	}
 }
