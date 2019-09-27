@@ -13,7 +13,7 @@
 
 <!-- 4.팀아이디와 해당 포지션별 선수 검색기능 예) 수원팀 ID:K02,골키퍼 -->	
 <h2>4.팀아이디와 해당 포지션별 선수 검색 기능</h2>
-<form id="info" action="<%=request.getContextPath()%>/player.do">
+<form id="info" action="${ctx}/player.do">
 	아이디 : <input type="text" name="teamId" /> <br/>
 	포지션 : <input type="text" name="position" /> <br/>
 	<input type="hidden" name="action" value="findinfo"/>
@@ -23,7 +23,7 @@
 
 <!-- 5. 수원팀(ID: K02)키가 170 이상 선수,이면서 성이 고씨인 선수-->
 <h2>5.팀아이디,성씨,키 로 인한 검색 기능</h2>
-<form action="heightname" action="<%=request.getContextPath()%>/player.do">
+<form action="heightname" action="${ctx}/player.do">
 	소속팀 <input type="text" name="teamId"/> <br/>
 	성씨    <input type="text" name="playername"/><br/>
 	키       <input type="text" name="height"/><br/>

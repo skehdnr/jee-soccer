@@ -11,7 +11,6 @@ public class Command implements Order{
 	protected HttpServletRequest request;
 	protected String action,domain,page,view;
 	
-	
 	@Override
 	public void execute() {
 		System.out.println("★★★  4. Command 들어옴 ★★★ ");
@@ -20,6 +19,6 @@ public class Command implements Order{
 				request.getParameter("solar"),
 				request.getParameter("action"),
 				request.getParameter("page")));
-		this.view = String.format(Constants.SINGLE_PATH,page);
+		this.view = String.format(Constants.DOUBLE_PATH,"facade",page);
 	}
 }

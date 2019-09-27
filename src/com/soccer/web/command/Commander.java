@@ -23,7 +23,7 @@ public class Commander {
 			command = new LoginCommand(request); 
 		break;
 		default:
-			break;
+		break;
 		}
 		} catch (Exception e) {
 			e.printStackTrace();
