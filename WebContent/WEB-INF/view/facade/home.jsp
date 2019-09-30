@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>soccer</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body>
+<jsp:include page="../common/head.jsp"/>
 <h2>2.포지션 종류보기</h2>
 <h2><input id="position" type="button" value="포지션 종류보기"/></h2>
 
@@ -44,5 +37,6 @@ $('#heightname').submit(function(){
 				alert('정보보기');
 });
 </script>
+<jsp:include page="../common/foot.jsp"/>
 </body>
 </html>

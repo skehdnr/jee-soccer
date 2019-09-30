@@ -54,7 +54,6 @@ public class PlayerDaoImpl implements PlayerDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("9. 반환된 결과값: "+player.toString());
 		return player ;
 	}
 	
