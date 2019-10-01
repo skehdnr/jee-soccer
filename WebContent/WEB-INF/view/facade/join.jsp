@@ -19,5 +19,5 @@
 app.init('${ctx}');
 </script>
 <jsp:include page="../common/foot.jsp"/>
-
+<a href=""></a>
 </html>
