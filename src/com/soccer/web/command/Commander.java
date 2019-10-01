@@ -22,6 +22,15 @@ public class Commander {
 		case LOGIN : 
 			command = new LoginCommand(request); 
 		break;
+		case CREATE : command= new CreateCommand(request);
+		break;
+		case SEARCH :
+		break;
+		case UPDATE :
+		break;
+		case DELETE :
+		break;
+			
 		default:
 		break;
 		}

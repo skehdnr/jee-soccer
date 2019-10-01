@@ -9,6 +9,12 @@ import com.soccer.web.service.PlayerService;
 
 public class PlayerServiceImpl implements PlayerService {
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
+
+	@Override
+	public boolean join(PlayerBean param) {
+		return PlayerDaoImpl.getInstance().insertPlayer(param);
+	}
+	
 	@Override
 	public List<String> findPositions() {
 		return PlayerDaoImpl.getInstance().selectPositions();
@@ -35,4 +41,5 @@ public class PlayerServiceImpl implements PlayerService {
 				param.getSolar()));
 		return PlayerDaoImpl.getInstance().selectByPlayerIdSolar(param);
 	}
+
 }

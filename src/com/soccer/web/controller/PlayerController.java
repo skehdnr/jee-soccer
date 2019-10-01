@@ -1,5 +1,6 @@
 package com.soccer.web.controller;
 
+import com.soccer.web.enums.Action;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +26,13 @@ public class PlayerController extends HttpServlet {
 				request.getParameter("page")));
 		
 		Receiver.init(request);
+		switch (Action.valueOf(request.getParameter("action").toUpperCase())){
+		case CREATE : request.setAttribute("page","login");
+			break;
+
+		default:
+			break;
+		}
 		Sender.forward(request, response);
 	}
 }

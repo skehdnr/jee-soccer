@@ -18,6 +18,8 @@ public class PlayerDaoImpl implements PlayerDao{
 	public static PlayerDaoImpl getInstance() {
 		return instance;
 	}
+	
+
 	@Override
 	public PlayerBean selectByPlayerIdSolar(PlayerBean param) {
 		PlayerBean player = null;
@@ -61,15 +63,20 @@ public class PlayerDaoImpl implements PlayerDao{
 	public List<String> selectPositions() {
 		List<String> positions = new ArrayList<>();
 		try {
-			String sql = "SELECT DISTINCT POSITION position \n"+"FROM PLAYER";
-			ResultSet rs = DatabaseFactory.createDatabase(Constants.VENDOR).getConnection().
-					prepareStatement(sql).executeQuery();
+			String sql = "SELECT DISTINCT POSITION position \n" + 
+					"FROM PLAYER";
+			PreparedStatement stmt = DatabaseFactory
+					.createDatabase(Constants.VENDOR)
+					.getConnection()
+					.prepareStatement(sql);
+			ResultSet rs =	stmt.executeQuery();
 			while(rs.next()) {
-				positions.add(rs.getString("position"));
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return positions;
 	}
 
@@ -84,22 +91,22 @@ public class PlayerDaoImpl implements PlayerDao{
 		List<PlayerBean> list = new ArrayList<PlayerBean>();
 		return list;
 	}
-	
 	@Override
-	public List<PlayerBean> selectByMany(PlayerBean param) {
-		List<PlayerBean> list = new ArrayList<>();
-		String sql = "? ? ? ";
+	public boolean insertPlayer(PlayerBean param) {
+		boolean flag = false;
 		try {
-			PreparedStatement stmt = DatabaseFactory.createDatabase(Constants.VENDOR).getConnection().prepareStatement(sql);
-			stmt.setString(1, param.getPlayerId());
-			stmt.setString(2, param.getBackNo());
-			stmt.setString(3, param.getEPlayerName());
-			ResultSet rs = stmt.executeQuery();
-			while(rs.next()) {
-			}
-		} catch (SQLException e) {
+			String sql = "INSERT INTO PLAYER(PLAYER_ID,SOLAR,TEAM_ID,PLAYER_NAME)\r\n" + 
+					"VALUES(?,?,'K03','김광진')";
+			PreparedStatement stmt = DatabaseFactory.createDatabase(Constants.VENDOR).getConnection().
+					prepareStatement(sql);
+			stmt.setString(1,param.getPlayerId());
+			stmt.setString(2,param.getSolar());
+			int rs = stmt.executeUpdate();
+			flag=(rs==1);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		return flag;
 	}
+	
 }
