@@ -1,6 +1,8 @@
 package com.soccer.web.controller;
 
 import com.soccer.web.enums.Action;
+import com.soccer.web.serviceimpl.PlayerServiceImpl;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import com.soccer.web.command.Sender;
 public class PlayerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		System.out.println("★★★ 1. 서블릿 들어옴 ★★★ ");
@@ -29,9 +31,13 @@ public class PlayerController extends HttpServlet {
 		switch (Action.valueOf(request.getParameter("action").toUpperCase())){
 		case CREATE : request.setAttribute("page","login");
 			break;
-
-		default:
+		case LOGIN : request.setAttribute("page","main");
 			break;
+		case POSITION : request.setAttribute("page", "2_positions_a");
+						request.setAttribute("position", PlayerServiceImpl.getInstance().findPositions());
+			break;
+		case FINDINFO : request.setAttribute("page", "findinfo");
+		default:break;
 		}
 		Sender.forward(request, response);
 	}

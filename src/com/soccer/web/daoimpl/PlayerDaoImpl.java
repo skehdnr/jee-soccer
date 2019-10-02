@@ -71,7 +71,7 @@ public class PlayerDaoImpl implements PlayerDao{
 					.prepareStatement(sql);
 			ResultSet rs =	stmt.executeQuery();
 			while(rs.next()) {
-				
+				positions.add(rs.getString("position"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

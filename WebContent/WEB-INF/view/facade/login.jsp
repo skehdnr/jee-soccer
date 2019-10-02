@@ -23,6 +23,7 @@
  <div>
  	<h3 id="join_a"><a id="a_join" href="#">회원가입</a></h3>
  </div>
+
 <script>
 app.init('${ctx}');
 </script>

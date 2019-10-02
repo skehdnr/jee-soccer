@@ -18,7 +18,7 @@ html, body {
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 10% 60% 10%;
 }
-.container div{border: 2px dotted #000000}
+.container div{border: 2px dotted #8080ff}
 /* .wrapper div{border : 1px dotted black} */
 #soccer_intro{
 	width: 100%;

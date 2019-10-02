@@ -27,7 +27,7 @@ public class FacadeController extends HttpServlet {
 					?"":
 				"/resources/"+r.toString().toLowerCase()));
 	}
-	System.out.println("@@@@@@@@@@@@@@@@@@퍼사드컨트롤러"+request.getParameter("page"));
+	System.out.println("@@@@@@@@@@@@@@@@@@ 퍼사드컨트롤러"+request.getParameter("page"));
 	if (request.getParameter("page")==null) {
 		request.setAttribute("page", "login");
 	}else {request.setAttribute("page",request.getParameter("page"));}

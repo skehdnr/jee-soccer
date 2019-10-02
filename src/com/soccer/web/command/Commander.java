@@ -19,12 +19,11 @@ public class Commander {
 				command = new MoveCommand(request);
 				System.out.println("커맨더 무브");
 		break;
-		case LOGIN : 
-			command = new LoginCommand(request); 
+		case LOGIN : command = new LoginCommand(request); 
 		break;
 		case CREATE : command= new CreateCommand(request);
 		break;
-		case SEARCH :
+		case POSITION : command = new SearchCommand(request);
 		break;
 		case UPDATE :
 		break;
