@@ -13,6 +13,9 @@ ${page}
 	<c:when test="${page eq '2_positions_a'}">
 		<jsp:include page="2_positions_a.jsp"/>
 	</c:when> 
+     <c:when test="${page eq 'findinfo'}">
+		<jsp:include page="4_find_by_teamid_position.jsp"/>
+	</c:when>
 </c:choose>
 </div>
 <jsp:include page="../common/foot.jsp"/>
